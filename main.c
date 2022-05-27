@@ -4,7 +4,24 @@
 
 #define MAX_LINHA 7
 #define MAX_COLUNA 7
-
+void recebeMatriz(int linha, int coluna, int matriz [linha][coluna]){
+  for (int i = 0; i < linha; i++){
+    
+    for (int j = 0; j < coluna; j++){
+      printf("[%i] [%i] = ",i,j);
+      scanf("%i",&matriz[i][j]);
+    }
+  }
+}
+void imprimeMatriz(int linha, int coluna, int matriz [linha][coluna]){
+  for (int i = 0; i < linha; i++){
+    
+    for (int j = 0; j < coluna; j++){
+      printf("%i\t",matriz[i][j]);
+    }
+    printf("\n");
+  }
+}
 int main(void) {
   
   int linha, coluna;
@@ -21,21 +38,9 @@ int main(void) {
     
   int  matriz [linha][coluna];
     
-  for (int i = 0; i < linha; i++){
-    
-    for (int j = 0; j < coluna; j++){
-      printf("[%i] [%i] = ",i,j);
-      scanf("%i",&matriz[i][j]);
-    }
-  }
+  recebeMatriz(linha,coluna, matriz);
   
-  printf("\n\n");
-  
-  for (int i = 0; i < linha; i++){
-    
-  for (int j = 0; j < coluna; j++)
-    printf("%i\t",matriz[i][j]);
-    
   printf("\n");
-  }
+  
+  imprimeMatriz(linha,coluna,matriz);
 }
